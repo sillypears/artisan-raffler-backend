@@ -1,7 +1,12 @@
 'use strict'
 
 const app = require('fastify')({ logger: true });
+const cors = require('@fastify/cors')
+
 require('dotenv').config();
+
+app.register(cors, {
+})
 
 const rootRoutes = require('./routes/root');
 rootRoutes.forEach((route, index) => {
